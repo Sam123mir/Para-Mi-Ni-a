@@ -6,6 +6,7 @@
     <title>Para Mi Princesa 💖</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Base Styles - No changes needed here, they are good */
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +63,7 @@
             z-index: 10;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px; /* Adjusted for mobile */
         }
 
         /* Header elegante */
@@ -74,7 +75,7 @@
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 4rem; /* Will be adjusted for mobile */
             font-weight: 300;
             background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #ff6b9d);
             background-size: 300% 300%;
@@ -92,7 +93,7 @@
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Will be adjusted for mobile */
             color: rgba(255, 255, 255, 0.7);
             font-weight: 300;
             letter-spacing: 1px;
@@ -104,8 +105,8 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
-            padding: 60px 40px;
-            margin: 40px 0;
+            padding: 60px 40px; /* Will be adjusted for mobile */
+            margin: 40px 0; /* Will be adjusted for mobile */
             box-shadow: 
                 0 20px 60px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -143,9 +144,9 @@
             background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500);
             padding: 4px;
             position: relative;
-            /* Removed cursor: pointer; */
             transition: all 0.3s ease;
             animation: slowRotate 30s linear infinite;
+            flex-shrink: 0; /* Prevents shrinking on small screens */
         }
 
         .photo-frame:hover {
@@ -172,8 +173,6 @@
             border-radius: 50%;
         }
 
-        /* Removed .photo-placeholder and .photo-text as they are no longer needed */
-
         @keyframes slowRotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -195,7 +194,7 @@
         }
 
         .date-display {
-            font-size: 3rem;
+            font-size: 3rem; /* Will be adjusted for mobile */
             font-weight: 600;
             color: #ff6b9d;
             text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
@@ -205,7 +204,7 @@
         /* Contador de tiempo */
         .time-counter {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjusted for mobile */
             gap: 20px;
             margin: 40px 0;
         }
@@ -220,7 +219,7 @@
         }
 
         .time-number {
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* Will be adjusted for mobile */
             font-weight: 600;
             color: #ff6b9d;
             display: block;
@@ -228,7 +227,7 @@
         }
 
         .time-label {
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* Will be adjusted for mobile */
             color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -243,14 +242,14 @@
 
         .song-reference {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.4rem; /* Will be adjusted for mobile */
             color: #f8b500;
             font-style: italic;
             margin-bottom: 20px;
         }
 
         .love-message {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Will be adjusted for mobile */
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.7;
         }
@@ -302,6 +301,8 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            text-align: center; /* Ensures text is centered in button */
+            white-space: nowrap; /* Prevents text from wrapping on small screens */
         }
 
         .elegant-btn:hover {
@@ -324,6 +325,7 @@
             margin: 30px 0;
             backdrop-filter: blur(15px);
             animation: fadeInUp 0.5s ease-out;
+            text-align: center; /* Centered text for the message */
         }
 
         @keyframes fadeInUp {
@@ -347,6 +349,7 @@
         .special-message p {
             line-height: 1.7;
             color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem; /* Adjusted for mobile readability */
         }
 
         /* Efectos de partículas */
@@ -370,30 +373,115 @@
             }
         }
 
-        /* Responsive */
+        /* Responsive - Main Mobile Adjustments */
         @media (max-width: 768px) {
             .title {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Smaller title for mobile */
             }
             
+            .subtitle {
+                font-size: 1rem; /* Smaller subtitle for mobile */
+            }
+
             .love-card {
-                padding: 40px 20px;
-                margin: 20px 10px;
+                padding: 30px 15px; /* Reduced padding for smaller screens */
+                margin: 20px 10px; /* Reduced margin for smaller screens */
             }
             
+            .photo-frame {
+                width: 180px; /* Slightly smaller photo frame */
+                height: 180px;
+            }
+
+            .date-display {
+                font-size: 2.2rem; /* Smaller date display */
+            }
+
             .time-counter {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+                gap: 10px; /* Reduced gap */
+            }
+
+            .time-number {
+                font-size: 2rem; /* Smaller numbers for time units */
+            }
+
+            .time-label {
+                font-size: 0.8rem; /* Smaller labels for time units */
+            }
+
+            .song-reference {
+                font-size: 1.1rem; /* Smaller song reference */
+            }
+
+            .love-message {
+                font-size: 1rem; /* Smaller main message */
             }
             
+            .heart-button {
+                font-size: 3.5rem; /* Slightly smaller heart button */
+            }
+
             .button-group {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column; /* Buttons stack vertically */
+                align-items: center; /* Center buttons */
+                gap: 15px; /* Reduced gap between stacked buttons */
             }
             
             .elegant-btn {
-                width: 80%;
-                max-width: 300px;
+                width: 90%; /* Buttons take more width */
+                max-width: 280px; /* Max width to prevent too wide buttons on slightly larger phones */
+                padding: 12px 20px; /* Smaller padding for buttons */
+                font-size: 0.95rem; /* Slightly smaller font for buttons */
+            }
+            
+            .special-message {
+                padding: 20px; /* Reduced padding for special message */
+            }
+
+            .special-message h3 {
+                font-size: 1.3rem; /* Smaller special message title */
+            }
+
+            .special-message p {
+                font-size: 0.9rem; /* Smaller special message text */
+            }
+        }
+
+        /* Even smaller screens (e.g., iPhone SE) */
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            .photo-frame {
+                width: 150px;
+                height: 150px;
+            }
+            .date-display {
+                font-size: 1.8rem;
+            }
+            .time-counter {
+                grid-template-columns: 1fr 1fr; /* Ensures 2 columns even on very small screens */
+                gap: 8px;
+            }
+            .time-number {
+                font-size: 1.8rem;
+            }
+            .time-label {
+                font-size: 0.75rem;
+            }
+            .love-message {
+                font-size: 0.95rem;
+            }
+            .heart-button {
+                font-size: 3rem;
+            }
+            .elegant-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -409,7 +497,8 @@
         
         <div class="love-card">
             <div class="photo-container">
-                <div class="photo-frame"> <div class="photo-inner">
+                <div class="photo-frame">
+                    <div class="photo-inner">
                         <img src="imagen.png" alt="Nuestra foto"> 
                     </div>
                 </div>
@@ -421,7 +510,7 @@
             </div>
             
             <div class="time-counter" id="timeCounter">
-                </div>
+            </div>
             
             <div class="main-message">
                 <div class="song-reference">
@@ -477,7 +566,9 @@
 
         // Actualizar contador de tiempo en tiempo real
         function updateTimeCounter() {
-            const startDate = new Date('2025-06-02T00:00:00');
+            // Asegúrate de que la fecha de inicio sea correcta.
+            // Actualmente está configurada para el 2 de junio de 2025.
+            const startDate = new Date('2025-06-02T00:00:00'); 
             const now = new Date();
             const diff = now - startDate;
             
@@ -507,8 +598,6 @@
             
             document.getElementById('timeCounter').innerHTML = counterHTML;
         }
-
-        // NO SE NECESITA MAS LA FUNCION "changePhoto"
 
         // Mostrar amor con efectos
         function showLove() {
@@ -596,9 +685,10 @@
             setInterval(updateTimeCounter, 1000); // Actualizar cada segundo
         });
 
-        // Efectos adicionales al mover el mouse
+        // Efectos adicionales al mover el mouse (funciona para mouse, para touch se puede adaptar si es necesario)
         document.addEventListener('mousemove', (e) => {
-            if (Math.random() < 0.01) {
+            // Reducimos la frecuencia de las partículas al mover el mouse para móvil
+            if (Math.random() < 0.005) { // Más raro en móvil
                 const sparkle = document.createElement('div');
                 sparkle.innerHTML = '✨';
                 sparkle.style.position = 'fixed';
